@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cr.ac.una.unaplanilla2025.controller.LogInController">
+<AnchorPane id="AnchorPane" fx:id="root" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cr.ac.una.unaplanilla2025.controller.LogInController">
    <children>
       <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
+            <ImageView fx:id="imgFondo" fitHeight="600.0" fitWidth="800.0" pickOnBounds="true">
                <image>
                   <Image url="@../resources/FondoInicioRojo.png" />
                </image>
@@ -39,7 +39,7 @@
                               <Image url="@../resources/Usuario-48.png" />
                            </image>
                         </ImageView>
-                        <MFXTextField floatMode="BORDER" floatingText="Usuario" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="320.0" HBox.hgrow="ALWAYS" />
+                        <MFXTextField fx:id="txfUsuario" floatMode="BORDER" floatingText="Usuario" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="320.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="760.0" spacing="10.0">
@@ -49,7 +49,7 @@
                               <Image url="@../resources/Contraseña-48.png" />
                            </image>
                         </ImageView>
-                        <MFXPasswordField floatMode="BORDER" floatingText="Contrasena" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="320.0" HBox.hgrow="ALWAYS" />
+                        <MFXPasswordField fx:id="txfClave" floatMode="BORDER" floatingText="Contrasena" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="320.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>
@@ -59,8 +59,8 @@
             </VBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="260.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="ALWAYS">
                <children>
-                  <MFXButton buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: lightblue;" text="Cancelar" />
-                  <MFXButton buttonType="RAISED" layoutX="263.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: lightblue;" text="Ingresar" />
+                  <MFXButton fx:id="btnCancelar" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionBtnCancelar" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #42A5F5;" text="Cancelar" />
+                  <MFXButton fx:id="btnIngresar" buttonType="RAISED" layoutX="263.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#onActionBtnIngresar" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #42A5F5;" text="Ingresar" />
                </children>
             </HBox>
          </children>
