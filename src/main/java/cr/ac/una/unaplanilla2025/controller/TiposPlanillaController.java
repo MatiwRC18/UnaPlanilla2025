@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author josue_5njzopn
  */
-public class TiposPlanillaController implements Initializable {
+public class TiposPlanillaController extends Controller implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -22,5 +22,9 @@ public class TiposPlanillaController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @Override
+    public void initialize() {
+    }
     
 }

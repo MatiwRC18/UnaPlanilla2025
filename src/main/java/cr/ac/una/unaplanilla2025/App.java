@@ -1,5 +1,6 @@
 package cr.ac.una.unaplanilla2025;
 
+import cr.ac.una.unaplanilla2025.util.FlowController;
 import io.github.palexdev.materialfx.css.themes.MFXThemeManager;
 import io.github.palexdev.materialfx.css.themes.Themes;
 import javafx.application.Application;
@@ -19,6 +20,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        FlowController.getInstance().InitializeFlow(stage, null);
         scene = new Scene(loadFXML("LogInView"), 640, 480);
          MFXThemeManager.setOn(scene, Themes.DEFAULT,Themes.LEGACY);
         stage.setScene(scene);

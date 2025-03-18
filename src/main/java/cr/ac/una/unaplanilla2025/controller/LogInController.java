@@ -1,6 +1,7 @@
 package cr.ac.una.unaplanilla2025.controller;
 
 import cr.ac.una.unaplanilla2025.util.AppContext;
+import cr.ac.una.unaplanilla2025.util.FlowController;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -39,6 +40,7 @@ public class LogInController implements Initializable{
 
     @FXML
     private void onActionBtnIngresar(ActionEvent event) {
+        FlowController.getInstance().goMain();
        
     }
         
