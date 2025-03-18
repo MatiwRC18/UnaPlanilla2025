@@ -1,5 +1,6 @@
 package cr.ac.una.unaplanilla2025.controller;
 
+import cr.ac.una.unaplanilla2025.util.AppContext;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -38,11 +39,16 @@ public class LogInController implements Initializable{
 
     @FXML
     private void onActionBtnIngresar(ActionEvent event) {
+       
     }
+        
+       
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         imgFondo.fitHeightProperty().bind(root.heightProperty());
         imgFondo.fitWidthProperty().bind(root.widthProperty());
+        
+        
     }
 }
