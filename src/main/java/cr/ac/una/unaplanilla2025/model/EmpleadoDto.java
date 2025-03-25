@@ -26,9 +26,9 @@ public class EmpleadoDto {
     private LocalDate fechaSalida;
     private Boolean activo;
     private Long version;
-    private Boolean modificado;
+    private Boolean modificado;
 
-    public EmpleadoDto(Long id, String nombre, String primerApellido, String segundoApellido, String cedula, String genero, String correo, Boolean administrador, String usuario, String clave, LocalDate fechaIngreso, LocalDate fechaSalida, Boolean activo, Long version, Boolean , modificado ) {
+    public EmpleadoDto(Long id, String nombre, String primerApellido, String segundoApellido, String cedula, String genero, String correo, Boolean administrador, String usuario, String clave, LocalDate fechaIngreso, LocalDate fechaSalida, Boolean activo, Long version, Boolean modificado) {
         this.id = id;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
@@ -43,10 +43,10 @@ public class EmpleadoDto {
         this.fechaSalida = fechaSalida;
         this.activo = activo;
         this.version = version;
-        this.<error> = <error>;
-        this.<error> = <error>;
+        this.modificado = modificado;
     }
 
+    
     public Long getId() {
         return id;
     }
