@@ -1,168 +1,232 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package cr.ac.una.unaplanilla2025.model;
+package cr.ac.una.unaplanillal2025.model;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author josue_5njzopn
+ * @author cbcar
  */
 public class EmpleadoDto {
-    private Long id;
-    private String nombre;
-    private String primerApellido;
-    private String segundoApellido;
-    private String cedula;
-    private String genero;
-    private String correo;
-    private Boolean administrador;
-    private String usuario;
-    private String clave;
-    private LocalDate fechaIngreso;
-    private LocalDate fechaSalida;
-    private Boolean activo;
+    private StringProperty id;
+    private StringProperty nombre;
+    private StringProperty primerApellido;
+    private StringProperty segundoApellido;
+    private StringProperty cedula;
+    private StringProperty genero;
+    private StringProperty correo;
+    private BooleanProperty administrador;
+    private StringProperty usuario;
+    private StringProperty clave;
+    private ObjectProperty<LocalDate> fechaIngreso;
+    private ObjectProperty<LocalDate> fechaSalida;
+    private BooleanProperty activo;
     private Long version;
     private Boolean modificado;
 
-    public EmpleadoDto(Long id, String nombre, String primerApellido, String segundoApellido, String cedula, String genero, String correo, Boolean administrador, String usuario, String clave, LocalDate fechaIngreso, LocalDate fechaSalida, Boolean activo, Long version, Boolean modificado) {
-        this.id = id;
-        this.nombre = nombre;
-        this.primerApellido = primerApellido;
-        this.segundoApellido = segundoApellido;
-        this.cedula = cedula;
-        this.genero = genero;
-        this.correo = correo;
-        this.administrador = administrador;
-        this.usuario = usuario;
-        this.clave = clave;
-        this.fechaIngreso = fechaIngreso;
-        this.fechaSalida = fechaSalida;
-        this.activo = activo;
-        this.version = version;
-        this.modificado = modificado;
+    public EmpleadoDto() {
+        this.id = new SimpleStringProperty("");
+        this.nombre = new SimpleStringProperty("");
+        this.primerApellido = new SimpleStringProperty("");
+        this.segundoApellido = new SimpleStringProperty("");
+        this.cedula = new SimpleStringProperty("");
+        this.genero = new SimpleStringProperty("");
+        this.correo = new SimpleStringProperty("");
+        this.administrador = new SimpleBooleanProperty(false);
+        this.usuario = new SimpleStringProperty("");
+        this.clave = new SimpleStringProperty("");
+        this.fechaIngreso = new SimpleObjectProperty<>(LocalDate.now());
+        this.fechaSalida = new SimpleObjectProperty<>();
+        this.activo = new SimpleBooleanProperty(true);
+        this.modificado = false;
     }
-
     
     public Long getId() {
-        return id;
+        if(this.id.get() != null && !this.id.get().isBlank()){
+            return Long.valueOf(this.id.get());
+        } else {
+            return null;
+        }        
+    }
+
+    public void setId(Long id) {
+        this.id.set(id.toString());
     }
 
     public String getNombre() {
-        return nombre;
+        return nombre.get();
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre.set(nombre);
     }
 
     public String getPrimerApellido() {
-        return primerApellido;
+        return primerApellido.get();
+    }
+
+    public void setPrimerApellido(String primerApellido) {
+        this.primerApellido.set(primerApellido);
     }
 
     public String getSegundoApellido() {
-        return segundoApellido;
+        return segundoApellido.get();
+    }
+
+    public void setSegundoApellido(String segundoApellido) {
+        this.segundoApellido.set(segundoApellido);
     }
 
     public String getCedula() {
-        return cedula;
+        return cedula.get();
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula.set(cedula);
     }
 
     public String getGenero() {
-        return genero;
+        return genero.get();
+    }
+
+    public void setGenero(String genero) {
+        this.genero.set(genero);
     }
 
     public String getCorreo() {
-        return correo;
+        return correo.get();
+    }
+
+    public void setCorreo(String correo) {
+        this.correo.set(correo);
     }
 
     public Boolean getAdministrador() {
-        return administrador;
+        return administrador.get();
+    }
+
+    public void setAdministrador(Boolean administrador) {
+        this.administrador.set(administrador);
     }
 
     public String getUsuario() {
-        return usuario;
+        return usuario.get();
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario.set(usuario);
     }
 
     public String getClave() {
-        return clave;
+        return clave.get();
+    }
+
+    public void setClave(String clave) {
+        this.clave.set(clave);
     }
 
     public LocalDate getFechaIngreso() {
-        return fechaIngreso;
+        return fechaIngreso.get();
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        this.fechaIngreso.set(fechaIngreso);
     }
 
     public LocalDate getFechaSalida() {
-        return fechaSalida;
+        return fechaSalida.get();
+    }
+
+    public void setFechaSalida(LocalDate fechaSalida) {
+        this.fechaSalida.set(fechaSalida);
     }
 
     public Boolean getActivo() {
-        return activo;
+        return activo.get();
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo.set(activo);
     }
 
     public Long getVersion() {
         return version;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setPrimerApellido(String primerApellido) {
-        this.primerApellido = primerApellido;
-    }
-
-    public void setSegundoApellido(String segundoApellido) {
-        this.segundoApellido = segundoApellido;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public void setAdministrador(Boolean administrador) {
-        this.administrador = administrador;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
-
-    public void setFechaIngreso(LocalDate fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
-    }
-
-    public void setFechaSalida(LocalDate fechaSalida) {
-        this.fechaSalida = fechaSalida;
-    }
-
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-    }
-
     public void setVersion(Long version) {
         this.version = version;
     }
 
+    public Boolean getModificado() {
+        return modificado;
+    }
+
+    public void setModificado(Boolean modificado) {
+        this.modificado = modificado;
+    }
+
+    public StringProperty getIdProperty() {
+        return id;
+    }
+
+    public StringProperty getNombreProperty() {
+        return nombre;
+    }
+
+    public StringProperty getPrimerApellidoProperty() {
+        return primerApellido;
+    }
+
+    public StringProperty getSegundoApellidoProperty() {
+        return segundoApellido;
+    }
+
+    public StringProperty getCedulaProperty() {
+        return cedula;
+    }
+
+    public StringProperty getGeneroProperty() {
+        return genero;
+    }
+
+    public StringProperty getCorreoProperty() {
+        return correo;
+    }
+
+    public BooleanProperty getAdministradorProperty() {
+        return administrador;
+    }
+
+    public StringProperty getUsuarioProperty() {
+        return usuario;
+    }
+
+    public StringProperty getClaveProperty() {
+        return clave;
+    }
+
+    public ObjectProperty<LocalDate> getFechaIngresoProperty() {
+        return fechaIngreso;
+    }
+
+    public ObjectProperty<LocalDate> getFechaSalidaProperty() {
+        return fechaSalida;
+    }
+
+    public BooleanProperty getActivoProperty() {
+        return activo;
+    }       
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.id);
+        hash = 17 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -185,7 +249,5 @@ public class EmpleadoDto {
     public String toString() {
         return "EmpleadoDto{" + "id=" + id + ", nombre=" + nombre + ", primerApellido=" + primerApellido + ", cedula=" + cedula + '}';
     }
-    
-    
-    
+
 }

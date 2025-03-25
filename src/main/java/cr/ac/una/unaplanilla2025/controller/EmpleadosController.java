@@ -4,6 +4,8 @@
  */
 package cr.ac.una.unaplanilla2025.controller;
 
+import cr.ac.una.unaplanilla2025.model.EmpleadoDto;
+import cr.ac.una.unaplanilla2025.util.Mensaje;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
@@ -12,9 +14,12 @@ import io.github.palexdev.materialfx.controls.MFXRadioButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
@@ -63,17 +68,36 @@ public class EmpleadosController extends Controller implements Initializable {
     private MFXButton btnEliminar;
     @FXML
     private MFXButton btnGuardar;
-
+    
+    private EmpleadoDto empleado;
+    private ObjectProperty<EmpleadoDto> empleadoProperty = new SimpleObjectProperty<>(); 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        bindEmpleado();
     }    
 
     @Override
     public void initialize() {
+    }
+    
+    private void bindEmpleado(){
+    try {
+        empleadoProperty.addListener((obs, oldVal, newVal) -> {
+                if(oldVal != null ){
+                txtNombre.textProperty().unbindBidirectional(oldVal.getNombreProperty());
+                }
+                
+                if(newVal != null){
+                              txtNombre.textProperty().bindBidirectional(newVal.getNombreProperty());
+                }
+});
+    } catch(Exception ex){
+            
+            new Mensaje().showModal(Alert.AlertType.ERROR, "Error al realizar rl bindeo", getStage(), "Ocurrio un error al realizar el bideneo");
+            }
     }
 
     @FXML
