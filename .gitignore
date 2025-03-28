@@ -1,0 +1,13 @@
+# Maven/Java/NetBeans
+/target/
+/build/
+/dist/
+*.class
+*.log
+*.iml
+.idea/
+nbproject/private/
+.nb-gradle/
+.vscode/
+.DS_Store
+Thumbs.db

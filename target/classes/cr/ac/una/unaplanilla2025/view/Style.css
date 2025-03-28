@@ -1,7 +1,7 @@
 *{
     -fx-base-color-focus: #09b6bc;
     -fx-base-color-etiquetas: #4d4d4d;
-        
+    -fx-base-color-titulos: #54b6cd;
 }
 
 .mfx-text-field{
@@ -72,6 +72,26 @@ fx-font-weight: bold;
 
 .separator{
       -fx-background-color: -fx-base-color-focus;
-    
+       
+}
+
+.jfx-panel-control{
+    -fx-background-color: #2196F3;
+    -fx-opacity: 0.8;
+   
+}
+
+.jfx-panel-control>AnchorPane{
+    -fx-background-color: white;
+    -fx-border-color: #97a692;
+    -fx-border-width: 10px;
+}
+
+.jfx-titulo-label{
+    -fx-font-size: 24px;
+    -fx-padding: 5 0 5 0;
+    -fx-text-fill: -fx-base-color-titulos;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 2,0.0,1,2);
     
 }
