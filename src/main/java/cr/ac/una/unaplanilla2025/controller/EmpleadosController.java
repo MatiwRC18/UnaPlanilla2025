@@ -23,11 +23,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.KeyEvent;
 
-/**
- * FXML Controller class
- *
- * @author josue_5njzopn
- */
 public class EmpleadosController extends Controller implements Initializable {
 
     @FXML

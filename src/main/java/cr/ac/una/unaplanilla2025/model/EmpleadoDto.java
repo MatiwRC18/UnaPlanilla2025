@@ -9,10 +9,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author cbcar
- */
+
 public class EmpleadoDto {
     private StringProperty id;
     private StringProperty nombre;

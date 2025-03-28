@@ -8,11 +8,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author josue_5njzopn
- */
+
 public class TiposPlanillaController extends Controller implements Initializable {
 
     /**

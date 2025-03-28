@@ -13,11 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
 
-/**
- * FXML Controller class
- *
- * @author josue_5njzopn
- */
+
 public class PrincipalController extends Controller implements Initializable {
 
     @FXML
